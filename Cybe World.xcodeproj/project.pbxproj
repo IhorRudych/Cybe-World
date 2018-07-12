@@ -9,12 +9,14 @@
 /* Begin PBXBuildFile section */
 		837EC866204DA44D008F6BFD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 837EC865204DA44D008F6BFD /* AppDelegate.swift */; };
 		837EC868204DA44D008F6BFD /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = 837EC867204DA44D008F6BFD /* art.scnassets */; };
-		837EC86A204DA44D008F6BFD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 837EC869204DA44D008F6BFD /* ViewController.swift */; };
+		837EC86A204DA44D008F6BFD /* ARViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 837EC869204DA44D008F6BFD /* ARViewController.swift */; };
 		837EC86D204DA44D008F6BFD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 837EC86B204DA44D008F6BFD /* Main.storyboard */; };
 		837EC86F204DA44D008F6BFD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 837EC86E204DA44D008F6BFD /* Assets.xcassets */; };
 		837EC872204DA44D008F6BFD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 837EC870204DA44D008F6BFD /* LaunchScreen.storyboard */; };
 		837EC87D204DA44D008F6BFD /* Cybe_WorldTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 837EC87C204DA44D008F6BFD /* Cybe_WorldTests.swift */; };
 		837EC888204DA44D008F6BFD /* Cybe_WorldUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 837EC887204DA44D008F6BFD /* Cybe_WorldUITests.swift */; };
+		837EC896204DA629008F6BFD /* RandomPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 837EC895204DA629008F6BFD /* RandomPoint.swift */; };
+		837EC898204DB1AC008F6BFD /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 837EC897204DB1AC008F6BFD /* MapViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,7 +40,7 @@
 		837EC862204DA44D008F6BFD /* Cybe World.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Cybe World.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		837EC865204DA44D008F6BFD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		837EC867204DA44D008F6BFD /* art.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = art.scnassets; sourceTree = "<group>"; };
-		837EC869204DA44D008F6BFD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		837EC869204DA44D008F6BFD /* ARViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARViewController.swift; sourceTree = "<group>"; };
 		837EC86C204DA44D008F6BFD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		837EC86E204DA44D008F6BFD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		837EC871204DA44D008F6BFD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -49,6 +51,8 @@
 		837EC883204DA44D008F6BFD /* Cybe WorldUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Cybe WorldUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		837EC887204DA44D008F6BFD /* Cybe_WorldUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cybe_WorldUITests.swift; sourceTree = "<group>"; };
 		837EC889204DA44D008F6BFD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		837EC895204DA629008F6BFD /* RandomPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomPoint.swift; sourceTree = "<group>"; };
+		837EC897204DB1AC008F6BFD /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,11 +105,13 @@
 			children = (
 				837EC865204DA44D008F6BFD /* AppDelegate.swift */,
 				837EC867204DA44D008F6BFD /* art.scnassets */,
-				837EC869204DA44D008F6BFD /* ViewController.swift */,
+				837EC869204DA44D008F6BFD /* ARViewController.swift */,
 				837EC86B204DA44D008F6BFD /* Main.storyboard */,
 				837EC86E204DA44D008F6BFD /* Assets.xcassets */,
 				837EC870204DA44D008F6BFD /* LaunchScreen.storyboard */,
 				837EC873204DA44D008F6BFD /* Info.plist */,
+				837EC895204DA629008F6BFD /* RandomPoint.swift */,
+				837EC897204DB1AC008F6BFD /* MapViewController.swift */,
 			);
 			path = "Cybe World";
 			sourceTree = "<group>";
@@ -263,8 +269,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				837EC86A204DA44D008F6BFD /* ViewController.swift in Sources */,
+				837EC86A204DA44D008F6BFD /* ARViewController.swift in Sources */,
 				837EC866204DA44D008F6BFD /* AppDelegate.swift in Sources */,
+				837EC896204DA629008F6BFD /* RandomPoint.swift in Sources */,
+				837EC898204DB1AC008F6BFD /* MapViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

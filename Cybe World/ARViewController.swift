@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  ARViewController.swift
 //  Cybe World
 //
 //  Created by Ihor Rudych on 3/5/18.
@@ -10,7 +10,7 @@ import UIKit
 import SceneKit
 import ARKit
 
-class ViewController: UIViewController, ARSCNViewDelegate {
+class ARViewController: UIViewController, ARSCNViewDelegate {
 
     @IBOutlet var sceneView: ARSCNView!
     
@@ -75,6 +75,24 @@ class ViewController: UIViewController, ARSCNViewDelegate {
     
     func sessionInterruptionEnded(_ session: ARSession) {
         // Reset tracking and/or remove existing anchors if consistent tracking is required
+        
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        guard let myTouch = touches.first else {return}
+        
+        let touchResult = sceneView.hitTest(myTouch.location(in: sceneView), types: [ARHitTestResult.ResultType.featurePoint])
+        guard let hitResult = touchResult.last else {return}
+        let hitTransf = SCNMatrix4(hitResult.worldTransform)
+        let hitVector = SCNVector3(hitTransf.m41, hitTransf.m42, hitTransf.m43)
+        self.createBall(position: hitVector)
+    }
+    
+    func createBall(position:SCNVector3){
+        let ballShp = SCNSphere(radius: 0.1)
+        let ballNd = SCNNode(geometry: ballShp)
+        ballNd.position = position
+        sceneView.scene.rootNode.addChildNode(ballNd)
         
     }
 }
